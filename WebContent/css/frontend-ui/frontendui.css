@@ -1,0 +1,177 @@
+.frontendui-grid .frontendui-grid-view,.frontendui-grid .frontendui-paging-info,.frontendui-grid .frontendui-pg-table,.frontendui-grid .frontendui-pg-selbox
+{
+	font-size: 14px;
+}
+
+.frontendui-grid .frontendui-grid-titlebar {
+	height: 40px;
+	line-height: 24px;
+	color: #000000;
+	background-color: #F9F9F9;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	padding: 0px;
+}
+
+.frontendui-grid .frontendui-grid-title {
+	float: left;
+	margin: 8px;
+}
+
+.frontendui-grid .frontendui-widget-header {
+	border-bottom: 1px solid #D3D3D3;
+}
+
+.frontendui-grid .frontendui-search-toolbar input[type="text"] {
+	font-size: 12px;
+	height: 15px;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+}
+/*
+.frontendui-grid .frontendui-state-default, .frontendui-grid .frontendui-widget-content .frontendui-state-default, .frontendui-grid .frontendui-widget-header .frontendui-state-default {
+    background: #F9F9F9;
+    border: 1px solid #D3D3D3;               
+    line-height: 15px;
+    height: 45px;
+    font-weight: bold;
+    color: #777777;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+*/
+
+/*** Column headers ******/
+.frontendui-grid .frontendui-grid-thead { /*background: #F9F9F9;*/
+	border: 1px solid #D3D3D3;
+	line-height: 15px;
+	/*height: 45px;*/
+	font-weight: bold;
+	color: #777777;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.frontendui-grid .frontendui-grid-htable th span.frontendui-grid-resize {
+	height: 45px !important;
+}
+
+.frontendui-grid .frontendui-grid-htable th div {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+/**** Data rows ***/
+.frontendui-grid .frontendui-grid-container {
+	
+}
+.frontendui-grid .frontendui-grid-container .frontendui-grid-hidebody{
+	display: none;
+}
+
+.frontendui-grid tr.jqgfirstrow td {
+	border: none; /*firefox fix*/
+}
+
+.frontendui-grid tr.jqgrow,.frontendui-grid tr.frontendui-row-ltr {
+	border: none;
+}
+
+.frontendui-grid tr.frontendui-row-ltr td {
+	border-bottom: 1px solid #DDDDDD;
+	border-right: none;
+	padding: 8px;
+}
+
+/*** alt row color fix ***/
+.frontendui-grid-btable .frontendui-widget-content.frontendui-priority-secondary {
+	background-image: none;
+	background-color: #F9F9F9;
+	opacity: 1;
+}
+
+.frontendui-grid-btable .frontendui-widget-content.frontendui-state-hover {
+	background-image: none;
+	background-color: #F3F3F3;
+	opacity: 1;
+}
+
+.frontendui-grid-btable .frontendui-widget-content.frontendui-state-highlight {
+	background-color: #EEDC94;
+	background-image: -ms-linear-gradient(top, #FCEEC1, #EEDC94);
+	background-image: -webkit-linear-gradient(top, #fceec1, #eedc94);
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #fceec1, #eedc94);
+	/* Firefox 3.6 */
+	background-image: -o-linear-gradient(top, #fceec1, #eedc94);
+	/* Opera 11.10+ */
+	background-image: linear-gradient(top, #fceec1, #eedc94);
+	/* CSS3 Compliant */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fceec1',
+		endColorstr='#eedc94', GradientType=0 ); /* IE8 */
+	background-repeat: repeat-x;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	opacity: 1;
+}
+
+.frontendui-grid .frontendui-icon-triangle-1-n {
+	background-position: 1px -16px;
+}
+
+.frontendui-grid tr.frontendui-search-toolbar th {
+	border-top-width: 0px !important;
+	border-top-color: inherit !important;
+	border-top-style: ridge !important
+}
+
+/****** PAGER *******/
+.frontendui-grid .frontendui-grid-pager {
+	background: #F9F9F9;
+	border: 1px solid #D3D3D3;
+	line-height: 15px;
+	height: 45px;
+}
+
+.frontendui-grid .frontendui-pg-input {
+	font-size: inherit;
+	width: auto;
+}
+
+.frontendui-grid .frontendui-pg-selbox {
+	display: block;
+	height: auto;
+	width: 70px;
+	margin: 0px;
+	padding: 1px 4px;
+	line-height: normal;
+}
+
+.frontendui-grid .frontendui-grid-htable th div {
+	overflow: visible;
+}
+
+.frontendui-grid .frontendui-pager-control {
+	height: 50px;
+	position: relative;
+}
+
+.frontendui-pg-table .navtable .frontendui-corner-all {
+	border-radius: 0px;
+}
+
+.frontendui-grid .frontendui-pg-button:hover {
+	padding: 1px;
+}
+
+.frontendui-grid .loading {
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	width: auto;
+	height: auto;
+	z-index: 101;
+	padding: 6px;
+	margin: 5px;
+	text-align: center;
+	font-weight: bold;
+	display: none;
+	border-width: 2px !important;
+	font-size: 11px;
+}
