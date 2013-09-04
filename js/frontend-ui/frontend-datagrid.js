@@ -43,45 +43,53 @@
 				url : this.element.attr("url") || this.options
 			});
 			var renderResult = this._renderGrid(target);
-			this.opts.data = {dataList:[{username:'qya',email:'qya.com'}]};
+			this.opts.data = {dataList:[{username:'qya',password:'111',email:'qya.com',address:'address'},
+										{username:'qya1',password:'111',email:'qya.1com',address:'address1'},
+										{username:'qy2',password:'111',email:'qya2.com',address:'address2'}
+										]};
 			this.opts.bodytmpl =$.templates(this.opts.template.html().toString().replace(/&gt;/ig,">"));
-			$('.frontendui-widget-content', renderResult).html(this.opts.bodytmpl.render(this.opts.data.dataList||[]));
+			$('.ui-jqgrid-btable tbody', renderResult).html(this.opts.bodytmpl.render(this.opts.data.dataList||[]));
 		},
 		_renderGrid : function(target) {
 			var that = this;
 			var p = this.element.parent();
 			var thead = target.find("thead");
-			var grid = $('<div class="frontendui-grid"></div>').append(target).appendTo(p);
+			var grid = $('<div></div>').append(target).appendTo(p);
 			grid.append( 
-				'<div class="frontendui-grid">' +
-					'<div class="frontendui-grid-view">' +
-						'<div class="frontendui-grid-titlebar frontendui-grid-header frontendui-corner-top frontendui-helper-clearfix">' +
-							'<div class="frontendui-state-default frontendui-grid-thead">' +
-								'<div class="frontendui-grid-theadbox">' +
-									'<table class="frontendui-grid-htable" cellspacing="0" cellpadding="0" border="0" >' +
-										
-									'</table>' +
-								'</div>' +
+				'<div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all">' +
+					'<div class="ui-jqgrid-view">' +
+						'<div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix">' +
+							'<span class="ui-jqgrid-title">Sample jqGrid Table</span>'+
+						'</div>' +
+						'<div class="ui-state-default ui-jqgrid-hdiv">' +
+							'<div class="ui-jqgrid-hbox">' +
+								'<table class="ui-jqgrid-htable" cellspacing="0" cellpadding="0" border="0" >' +
+									'<thead></thead>'+
+								'</table>' +
 							'</div>' +
 						'</div>' +
-						'<div class="frontendui-grid-container">' +
-							'<div class="frontendui-widget-content frontendui-row-ltr frontendui-priority-secondary">' +
+						'<div class="ui-jqgrid-bdiv">' +
+							'<div style="position:relative;">' +
+								'<div/>'+
+								'<table class="ui-jqgrid-btable" cellspacing="0" cellpadding="0" border="0" >' +
+									'<tbody></tbody>'+
+								'</table>' +
 							'</div>' +
-							'<div class="frontendui-grid-hidebody"></div>' +
 						'</div>' +
 					'</div>' +
 				'</div>'
 			);
 			 thead.find("tr").each(function(){
                     var $tr =$("<tr>");
+					$tr.addClass("ui-jqgrid-labels");
                     $(this).find("th").each(function(i, e){
-                    	$(this).addClass("frontendui-state-default frontendui-th-column frontendui-th-ltr");
+                    	$(this).addClass("ui-state-default ui-th-column ui-th-ltr");
                     	$(this).appendTo($tr);
                     });
-                    $tr.appendTo(grid.find(".frontendui-grid-htable"));
+                    $tr.appendTo(grid.find(".ui-jqgrid-htable thead"));
             });
 			this.opts.template.find("td").each(function(i,e){   
-            	$(e).width($(".frontendui-th-column",grid).eq(i).width());
+            	$(e).width($(".ui-th-column",grid).eq(i).width());
             });
 		},
 		_init : function() {
